@@ -1,0 +1,27 @@
+{
+  "name": "xsdvalidate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/retamalesn/xsdvalidate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/retamalesn/xsdvalidate/issues"
+  },
+  "homepage": "https://github.com/retamalesn/xsdvalidate#readme",
+  "dependencies": {
+    "libxml-xsd": "^0.5.2"
+  }
+}

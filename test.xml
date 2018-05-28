@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<template alpha="1" backgroundColor="#1A4292FF" fontFamily="Roboto, sans-serif" paddingRight="19" paddingTop="19" 
+          paddingBottom="19" paddingLeft="19" borderWidth="10" cornerRadius="10" borderColor="#A50E0EFF" 
+          contentAlignment="center" selfAlignment="start" mode="AspectFit" name="template">
+    <label alpha="1" marginTop="0" marginBottom="8" marginLeft="0" marginRight="0" paddingRight="2" paddingTop="2" paddingBottom="2" paddingLeft="2" textColor="#3d464d" text="Edit your template"/>
+    <label wpercentage="1" alpha="1" marginTop="0" marginBottom="8" marginLeft="0" marginRight="0" paddingRight="2" paddingTop="2" paddingBottom="2" paddingLeft="2" textColor="#3d464d" text="Label">
+    </label>
+</template>

@@ -1,0 +1,615 @@
+<?xml version="1.0"?>
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <!-- Elementos Simples -->
+    <xs:element name="highlightedState"/>
+    <xs:element name="selectedState"/>  
+    <!-- Atributos -->
+    <xs:attribute name="alpha" type="xs:integer"/>
+    <xs:attribute name="autoplay" type="xs:boolean"/>
+    <xs:attribute name="backgroundColor" type="colorType"/>
+    <xs:attribute name="backgroundImage" type="urlType"/>
+    <xs:attribute name="bind" type="noNumberType"/>
+    <xs:attribute name="borderColor" type="colorType"/>
+    <xs:attribute name="borderWidth" type="xs:integer"/>
+    <xs:attribute name="canGoFullScreen" type="xs:boolean"/>
+    <xs:attribute name="centerIn" type="noNumberType"/>
+    <xs:attribute name="compassEnabled" type="xs:boolean"/>
+    <xs:attribute name="contentAlignment" type="noNumberType"/>
+    <xs:attribute name="cornerRadius" type="xs:integer"/>
+    <xs:attribute name="dateFormat" type="noNumberType"/>
+    <xs:attribute name="dateStyle" type="noNumberType"/>
+    <xs:attribute name="descriptionColor" type="colorType"/>
+    <xs:attribute name="descriptionFontFamily" type="noNumberType"/>
+    <xs:attribute name="descriptionFontSize" type="xs:integer"/>
+    <xs:attribute name="fontFamily" type="noNumberType"/>
+    <xs:attribute name="fontSize" type="xs:integer"/>
+    <xs:attribute name="header" type="noNumberType"/>
+    <xs:attribute name="headerLine" type="noNumberType"/>
+    <xs:attribute name="height" type="xs:integer"/>
+    <xs:attribute name="hideBackButton" type="xs:boolean"/>
+    <xs:attribute name="hpercentage" type="xs:decimal"/>
+    <xs:attribute name="icon" type="urlType"/>
+    <xs:attribute name="iconURL" type="urlType"/>
+    <xs:attribute name="imageURL" type="urlType"/>
+    <xs:attribute name="key" type="xs:string"/>
+    <xs:attribute name="keyboardType" type="xs:string"/>
+    <xs:attribute name="mapType" type="noNumberType"/>
+    <xs:attribute name="marginTop" type="xs:integer"/>
+    <xs:attribute name="marginBottom" type="xs:integer"/>
+    <xs:attribute name="marginLeft" type="xs:integer"/>
+    <xs:attribute name="marginRight" type="xs:integer"/>
+    <xs:attribute name="markerIcon" type="urlType"/>
+    <xs:attribute name="maxZoom" type="xs:integer"/>
+    <xs:attribute name="maximumDate" type="xs:string"/>
+    <xs:attribute name="minimumDate" type="xs:string"/>
+    <xs:attribute name="menuColor" type="colorType"/>
+    <xs:attribute name="message" type="noNumberType"/>
+    <xs:attribute name="minZoom" type="xs:integer"/>
+    <xs:attribute name="mode" type="noNumberType"/>
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:attribute name="navigationType" type="noNumberType"/>
+    <xs:attribute name="layout" type="noNumberType"/>
+    <xs:attribute name="layoutName" type="noNumberType"/>
+    <xs:attribute name="latitude" type="xs:integer"/>
+    <xs:attribute name="longitude" type="xs:integer"/>
+    <xs:attribute name="on" type="noNumberType"/>
+    <xs:attribute name="paddingBottom" type="xs:integer"/>
+    <xs:attribute name="paddingLeft" type="xs:integer"/>
+    <xs:attribute name="paddingRight" type="xs:integer"/>
+    <xs:attribute name="paddingTop" type="xs:integer"/>
+    <xs:attribute name="pdfURL" type="urlType"/>
+    <xs:attribute name="placeholder" type="xs:string"/>
+    <xs:attribute name="ruleContext" type="noNumberType"/>
+    <xs:attribute name="ruleName" type="xs:string"/>
+    <xs:attribute name="selectedItem" type="xs:integer"/>
+    <xs:attribute name="selectedMenuColor" type="colorType"/>
+    <xs:attribute name="selectionMode" type="xs:string"/>
+    <xs:attribute name="selfAlignment" type="noNumberType"/>
+    <xs:attribute name="showDefaultPlaceholder" type="xs:boolean"/>
+    <xs:attribute name="showUserLocation" type="xs:boolean"/>
+    <xs:attribute name="startTime" type="xs:integer"/>
+    <xs:attribute name="text" type="noNumberType"/>
+    <xs:attribute name="textAlignment" type="noNumberType"/>
+    <xs:attribute name="textColor" type="colorType"/>
+    <xs:attribute name="thumbnail" type="noNumberType"/>
+    <xs:attribute name="titleFontFamily" type="noNumberType"/>
+    <xs:attribute name="titleFontSize" type="xs:integer"/>
+    <xs:attribute name="timeStyle" type="noNumberType"/>
+    <xs:attribute name="tintColor" type="colorType"/>
+    <xs:attribute name="title" type="noNumberType"/>
+    <xs:attribute name="titleColor" type="colorType"/>
+    <xs:attribute name="type" type="noNumberType"/>
+    <xs:attribute name="userInteractionEnabled" type="xs:boolean"/>
+    <xs:attribute name="variable" type="xs:string"/>
+    <xs:attribute name="videoURL" type="urlType"/>
+    <xs:attribute name="width" type="xs:integer"/>
+    <xs:attribute name="wpercentage" type="xs:decimal"/>
+    <xs:attribute name="zoom" type="xs:integer"/>
+    <xs:attribute name="zoomEnabled" type="xs:boolean"/>
+    <!-- Elementos Complejos -->
+    <xs:element name="label">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="event" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute ref="dateFormat"/>
+            <xs:attribute ref="dateStyle"/>
+            <xs:attribute ref="fontFamily"/>
+            <xs:attribute ref="fontSize"/>
+            <xs:attribute ref="mode"/>
+            <xs:attribute ref="text"/>
+            <xs:attribute ref="textAlignment"/>
+            <xs:attribute ref="textColor"/>           
+            <xs:attribute ref="timeStyle"/>        
+            <xs:attributeGroup ref="mediaElement"/>               
+        </xs:complexType>    
+    </xs:element>
+    <xs:element name="event">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="action" minOccurs="1"/>
+            </xs:sequence>
+            <xs:attribute ref="on" use="required"/>
+        </xs:complexType>    
+    </xs:element>
+    <xs:element name="action">
+        <xs:complexType>
+            <xs:attribute ref="message"/>
+            <xs:attribute ref="navigationType" />
+            <xs:attribute ref="layout" />
+            <xs:attribute ref="title"/>
+            <xs:attribute ref="type" use="required"/>
+            <xs:attribute ref="ruleContext"/>
+            <xs:attribute ref="ruleName"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="pdf">
+        <xs:complexType>
+            <xs:attribute ref="borderColor"/>
+            <xs:attribute ref="borderWidth"/>
+            <xs:attribute ref="pdfURL"/>
+            <xs:attribute ref="showDefaultPlaceholder"/>
+            <xs:attribute ref="thumbnail"/>
+            <xs:attribute ref="title"/>
+            <xs:attributeGroup ref="mediaElement"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="video">
+        <xs:complexType>
+            <xs:attribute ref="autoplay"/>
+            <xs:attribute ref="borderColor"/>
+            <xs:attribute ref="borderWidth"/>
+            <xs:attribute ref="videoURL"/>
+            <xs:attribute ref="showDefaultPlaceholder"/>
+            <xs:attribute ref="startTime"/>
+            <xs:attribute ref="thumbnail"/>
+            <xs:attribute ref="title"/>
+            <xs:attributeGroup ref="mediaElement"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="centerCoordinateLocation">
+        <xs:complexType>
+            <xs:attribute ref="latitude"/>
+            <xs:attribute ref="longitude"/>
+        </xs:complexType>    
+    </xs:element>
+    <xs:element name="mapview">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="centerCoordinateLocation"/>
+                <xs:element ref="event" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute ref="bind"/>
+            <xs:attribute ref="centerIn" use="required"/>
+            <xs:attribute ref="compassEnabled"/>
+            <xs:attribute ref="descriptionColor"/>
+            <xs:attribute ref="descriptionFontFamily"/>
+            <xs:attribute ref="descriptionFontSize"/>
+            <xs:attribute ref="height"/>
+            <xs:attribute ref="hpercentage"/>
+            <xs:attribute ref="markerIcon"/>
+            <xs:attribute ref="mapType" use="required"/>
+            <xs:attribute ref="maxZoom"/>
+            <xs:attribute ref="minZoom"/>
+            <xs:attribute ref="name" use="required"/>
+            <xs:attribute ref="showUserLocation"/>
+            <xs:attribute ref="titleColor"/>
+            <xs:attribute ref="titleFontFamily"/>
+            <xs:attribute ref="titleFontSize"/>
+            <xs:attribute ref="userInteractionEnabled"/>
+            <xs:attribute ref="width"/>
+            <xs:attribute ref="wpercentage"/>
+            <xs:attribute ref="zoom"/>
+            <xs:attribute ref="zoomEnabled"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="item">
+        <xs:complexType>
+            <xs:attribute ref="title" use="required"/>
+            <xs:attribute ref="layoutName" use="required"/>
+            <xs:attribute ref="icon"/>
+        </xs:complexType>
+    </xs:element> 
+    <xs:element name="image">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="event" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute ref="backgroundImage"/>
+            <xs:attribute ref="borderColor"/>
+            <xs:attribute ref="borderWidth"/>
+            <xs:attribute ref="canGoFullScreen"/>
+            <xs:attribute ref="imageURL"/>
+            <xs:attribute ref="title"/>
+            <xs:attributeGroup ref="mediaElement"/>
+            
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="button">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element ref="event" minOccurs="0"/>
+                <xs:element ref="highlightedState" minOccurs="1"/>
+                <xs:element ref="selectedState" minOccurs="1"/>
+            </xs:choice>
+            <xs:attribute ref="backgroundImage"/>
+            <xs:attribute ref="borderColor"/>
+            <xs:attribute ref="borderWidth"/>
+            <xs:attribute ref="fontSize"/>
+            <xs:attribute ref="iconURL"/>
+            <xs:attribute ref="text"/>
+            <xs:attribute ref="textAlignment"/>
+            <xs:attribute ref="textColor"/>
+            <xs:attributeGroup ref="mediaElement"/>  
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="checkbox">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="event" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute ref="alpha"/>
+            <xs:attribute ref="bind"/>
+            <xs:attribute ref="marginBottom"/>
+            <xs:attribute ref="marginLeft"/>
+            <xs:attribute ref="marginRight"/>
+            <xs:attribute ref="marginTop"/>
+            <xs:attribute ref="paddingBottom"/>
+            <xs:attribute ref="paddingLeft"/>
+            <xs:attribute ref="paddingRight"/>
+            <xs:attribute ref="paddingTop"/>
+            <xs:attribute ref="placeholder"/>
+            <xs:attribute ref="selfAlignment"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="select">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="event" minOccurs="0"/>
+                <xs:element ref="templateRef" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute ref="alpha"/>
+            <xs:attribute ref="backgroundColor"/>
+            <xs:attribute ref="backgroundImage"/>
+            <xs:attribute ref="bind"/>
+            <xs:attribute ref="borderColor"/>
+            <xs:attribute ref="borderWidth"/>
+            <xs:attribute ref="contentAlignment"/>
+            <xs:attribute ref="cornerRadius"/>
+            <xs:attribute ref="fontFamily"/>
+            <xs:attribute ref="fontSize"/>
+            <xs:attribute ref="height"/>
+            <xs:attribute ref="marginBottom"/>
+            <xs:attribute ref="marginLeft"/>
+            <xs:attribute ref="marginRight"/>
+            <xs:attribute ref="marginTop"/>
+            <xs:attribute ref="mode"/>
+            <xs:attribute ref="paddingBottom"/>
+            <xs:attribute ref="paddingLeft"/>
+            <xs:attribute ref="paddingRight"/>
+            <xs:attribute ref="paddingTop"/>
+            <xs:attribute ref="selfAlignment"/>
+            <xs:attribute ref="textAlignment"/>
+            <xs:attribute ref="textColor"/>
+            <xs:attribute ref="tintColor"/>
+            <xs:attribute ref="width"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="templateRef">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="map" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute ref="name"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="map">
+        <xs:complexType>
+            <xs:attribute ref="key"/>
+            <xs:attribute ref="variable"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="list">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element ref="event" minOccurs="0"/>
+                <xs:element ref="templateRef" minOccurs="0" maxOccurs="1"/>
+            </xs:choice>
+            <xs:attribute ref="alpha"/>
+            <xs:attribute ref="backgroundColor"/>
+            <xs:attribute ref="backgroundImage"/>
+            <xs:attribute ref="bind"/>
+            <xs:attribute ref="borderColor"/>
+            <xs:attribute ref="borderWidth"/>
+            <xs:attribute ref="contentAlignment"/>
+            <xs:attribute ref="cornerRadius"/>
+            <xs:attribute ref="fontFamily"/>
+            <xs:attribute ref="fontSize"/>
+            <xs:attribute ref="height"/>
+            <xs:attribute ref="hpercentage"/>
+            <xs:attribute ref="marginBottom"/>
+            <xs:attribute ref="marginLeft"/>
+            <xs:attribute ref="marginRight"/>
+            <xs:attribute ref="marginTop"/>
+            <xs:attribute ref="mode"/>
+            <xs:attribute ref="paddingBottom"/>
+            <xs:attribute ref="paddingLeft"/>
+            <xs:attribute ref="paddingRight"/>
+            <xs:attribute ref="paddingTop"/>
+            <xs:attribute ref="selfAlignment"/>
+            <xs:attribute ref="textAlignment"/>
+            <xs:attribute ref="textColor"/>
+            <xs:attribute ref="tintColor"/>
+            <xs:attribute ref="width"/>
+            <xs:attribute ref="wpercentage"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="textfield">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="event" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute ref="alpha"/>
+            <xs:attribute ref="backgroundColor"/>
+            <xs:attribute ref="bind"/>
+            <xs:attribute ref="borderColor"/>
+            <xs:attribute ref="borderWidth"/>
+            <xs:attribute ref="contentAlignment"/>
+            <xs:attribute ref="cornerRadius"/>
+            <xs:attribute ref="dateFormat"/>
+            <xs:attribute ref="dateStyle"/>
+            <xs:attribute ref="fontFamily"/>
+            <xs:attribute ref="fontSize"/>
+            <xs:attribute ref="height"/>
+            <xs:attribute ref="hpercentage"/>
+            <xs:attribute ref="keyboardType"/>
+            <xs:attribute ref="marginBottom"/>
+            <xs:attribute ref="marginLeft"/>
+            <xs:attribute ref="marginRight"/>
+            <xs:attribute ref="marginTop"/>
+            <xs:attribute ref="maximumDate"/>
+            <xs:attribute ref="minimumDate"/>  
+            <xs:attribute ref="mode"/>
+            <xs:attribute ref="paddingBottom"/>
+            <xs:attribute ref="paddingLeft"/>
+            <xs:attribute ref="paddingRight"/>
+            <xs:attribute ref="paddingTop"/>
+            <xs:attribute ref="placeholder"/>
+            <xs:attribute ref="selectionMode"/>
+            <xs:attribute ref="selfAlignment"/>
+            <xs:attribute ref="textAlignment"/>
+            <xs:attribute ref="textColor"/>
+            <xs:attribute ref="timeStyle"/>
+            <xs:attribute ref="width"/>
+            <xs:attribute ref="wpercentage"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="hcontainer">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element ref="button" minOccurs="0"/>
+                <xs:element ref="checkbox" minOccurs="0"/>
+                <xs:element ref="event" minOccurs="0"/>
+                <xs:element ref="hcontainer" minOccurs="0"/>
+                <xs:element ref="image" minOccurs="0"/>
+                <xs:element ref="mapview" minOccurs="0"/>
+                <xs:element ref="label" minOccurs="0"/>
+                <xs:element ref="list" minOccurs="0"/>
+                <xs:element ref="select" minOccurs="0"/>
+                <xs:element ref="pdf" minOccurs="0"/>
+                <xs:element ref="textfield" minOccurs="0"/>
+                <xs:element ref="vcontainer" minOccurs="0"/>
+                <xs:element ref="video" minOccurs="0"/>
+            </xs:choice>
+            <xs:attribute ref="alpha"/>
+            <xs:attribute ref="backgroundColor"/>
+            <xs:attribute ref="backgroundImage" />
+            <xs:attribute ref="borderColor"/>
+            <xs:attribute ref="borderWidth"/>
+            <xs:attribute ref="contentAlignment"/>
+            <xs:attribute ref="cornerRadius"/>
+            <xs:attribute ref="fontFamily"/>
+            <xs:attribute ref="height"/>
+            <xs:attribute ref="hpercentage"/>
+            <xs:attribute ref="marginBottom"/>
+            <xs:attribute ref="marginLeft"/>
+            <xs:attribute ref="marginRight"/>
+            <xs:attribute ref="marginTop"/>
+            <xs:attribute ref="mode"/>
+            <xs:attribute ref="paddingBottom"/>
+            <xs:attribute ref="paddingLeft"/>
+            <xs:attribute ref="paddingRight"/>
+            <xs:attribute ref="paddingTop"/>
+            <xs:attribute ref="selfAlignment"/>
+            <xs:attribute ref="width"/>
+            <xs:attribute ref="wpercentage"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="vcontainer">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element ref="button" minOccurs="0"/>
+                <xs:element ref="checkbox" minOccurs="0"/>
+                <xs:element ref="event" minOccurs="0"/>
+                <xs:element ref="hcontainer" minOccurs="0"/>
+                <xs:element ref="image" minOccurs="0"/>
+                <xs:element ref="mapview" minOccurs="0"/>
+                <xs:element ref="label" minOccurs="0"/>
+                <xs:element ref="list" minOccurs="0"/>
+                <xs:element ref="select" minOccurs="0"/>
+                <xs:element ref="pdf" minOccurs="0"/>
+                <xs:element ref="textfield" minOccurs="0"/>
+                <xs:element ref="vcontainer" minOccurs="0"/>
+                <xs:element ref="video" minOccurs="0"/>
+            </xs:choice>
+            <xs:attribute ref="alpha"/>
+            <xs:attribute ref="backgroundColor"/>
+            <xs:attribute ref="backgroundImage" />
+            <xs:attribute ref="borderColor"/>
+            <xs:attribute ref="borderWidth"/>
+            <xs:attribute ref="contentAlignment"/>
+            <xs:attribute ref="cornerRadius"/>
+            <xs:attribute ref="fontFamily"/>
+            <xs:attribute ref="height"/>
+            <xs:attribute ref="hpercentage"/>
+            <xs:attribute ref="marginBottom"/>
+            <xs:attribute ref="marginLeft"/>
+            <xs:attribute ref="marginRight"/>
+            <xs:attribute ref="marginTop"/>
+            <xs:attribute ref="mode"/>
+            <xs:attribute ref="paddingBottom"/>
+            <xs:attribute ref="paddingLeft"/>
+            <xs:attribute ref="paddingRight"/>
+            <xs:attribute ref="paddingTop"/>
+            <xs:attribute ref="selfAlignment"/>
+            <xs:attribute ref="width"/>
+            <xs:attribute ref="wpercentage"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="template">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element ref="button" minOccurs="0"/>
+                <xs:element ref="checkbox" minOccurs="0"/>
+                <xs:element ref="event" minOccurs="0"/>
+                <xs:element ref="hcontainer" minOccurs="0"/>
+                <xs:element ref="image" minOccurs="0"/>
+                <xs:element ref="mapview" minOccurs="0"/>
+                <xs:element ref="label" minOccurs="0"/>
+                <!--<xs:element ref="list" minOccurs="0"/> restriccion -->
+                <!--<xs:element ref="select" minOccurs="0"/> restriccion -->
+                <xs:element ref="pdf" minOccurs="0"/>
+                <xs:element ref="textfield" minOccurs="0"/>
+                <xs:element ref="vcontainer" minOccurs="0"/>
+                <xs:element ref="video" minOccurs="0"/>               
+            </xs:choice>
+            <xs:attribute ref="alpha"/>
+            <xs:attribute ref="backgroundColor"/>
+            <xs:attribute ref="borderColor"/>
+            <xs:attribute ref="borderWidth"/>
+            <xs:attribute ref="contentAlignment"/>
+            <xs:attribute ref="cornerRadius"/>
+            <xs:attribute ref="fontFamily"/>
+            <xs:attribute ref="mode"/>
+            <xs:attribute ref="name"/>
+            <xs:attribute ref="paddingBottom"/>
+            <xs:attribute ref="paddingLeft"/>
+            <xs:attribute ref="paddingRight"/>
+            <xs:attribute ref="paddingTop"/>
+            <xs:attribute ref="selfAlignment"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="navigationBar">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="leftButtons" minOccurs="0"/>
+                <xs:element ref="rightButtons" minOccurs="0"/>         
+            </xs:sequence>
+            <xs:attribute ref="title"/>
+            <xs:attribute ref="hideBackButton"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="leftButtons">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="button" minOccurs="0"/>             
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="rightButtons">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="button" minOccurs="0"/>             
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="layout">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element ref="button" minOccurs="0"/>
+                <xs:element ref="checkbox" minOccurs="0"/>
+                <xs:element ref="datasource"/> 
+                <xs:element ref="event" minOccurs="0"/>
+                <xs:element ref="hcontainer" minOccurs="0"/>
+                <xs:element ref="image" minOccurs="0"/>
+                <xs:element ref="mapview" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="navigationBar"/>
+                <xs:element ref="label" minOccurs="0"/>
+                <xs:element ref="list" minOccurs="0"/>
+                <xs:element ref="select" minOccurs="0"/>
+                <xs:element ref="pdf" minOccurs="0"/>
+                <xs:element ref="textfield" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="vcontainer" minOccurs="0"/>
+                <xs:element ref="video" minOccurs="0"/>      
+            </xs:choice>
+            <xs:attribute ref="alpha"/>
+            <xs:attribute ref="backgroundColor"/>
+            <xs:attribute ref="backgroundImage"/>
+            <xs:attribute ref="borderColor"/>
+            <xs:attribute ref="borderWidth"/>
+            <xs:attribute ref="contentAlignment"/>
+            <xs:attribute ref="cornerRadius"/>
+            <xs:attribute ref="fontFamily"/>
+            <xs:attribute ref="mode"/>
+            <xs:attribute ref="name"/>
+            <xs:attribute ref="paddingBottom"/>
+            <xs:attribute ref="paddingLeft"/>
+            <xs:attribute ref="paddingRight"/>
+            <xs:attribute ref="paddingTop"/>
+            <xs:attribute ref="selfAlignment"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="datasource">
+        <xs:complexType>
+            <xs:attribute ref="type"/>
+            <xs:attribute ref="name"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="crossmenu">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element ref="button" minOccurs="0"/>
+                <xs:element ref="checkbox" minOccurs="0"/>
+                <xs:element ref="datasource"/> 
+                <xs:element ref="event" minOccurs="0"/>
+                <xs:element ref="hcontainer" minOccurs="0"/>
+                <xs:element ref="image" minOccurs="0"/>
+                <xs:element ref="item" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="mapview" minOccurs="0"/>
+                <xs:element ref="navigationBar"/>
+                <xs:element ref="label" minOccurs="0"/>
+                <xs:element ref="list" minOccurs="0"/>
+                <xs:element ref="select" minOccurs="0"/>
+                <xs:element ref="pdf" minOccurs="0"/>
+                <xs:element ref="textfield" minOccurs="0"/>
+                <xs:element ref="vcontainer" minOccurs="0"/>
+                <xs:element ref="video" minOccurs="0"/> 
+            </xs:choice>
+            <xs:attribute ref="name" use="required"/>
+            <xs:attribute ref="header" use="required"/>
+            <xs:attribute ref="headerLine"/>
+            <xs:attribute ref="menuColor"/>
+            <xs:attribute ref="selectedItem"/>
+            <xs:attribute ref="selectedMenuColor"/>
+        </xs:complexType>
+    </xs:element>
+    <!-- Tipos simples definidos -->
+    <xs:simpleType name="noNumberType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[^0-9]*"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="colorType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="#([A-Fa-f0-9]{8}|[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="urlType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="https?://.+" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- Grupo de atributos definidos -->
+    <xs:attributeGroup name="mediaElement">
+        <xs:attribute ref="alpha"/>
+        <xs:attribute ref="backgroundColor"/>
+        <xs:attribute ref="bind"/>
+        <xs:attribute ref="contentAlignment"/>
+        <xs:attribute ref="cornerRadius"/>
+        <xs:attribute ref="height"/>
+        <xs:attribute ref="hpercentage"/>
+        <xs:attribute ref="marginBottom"/>
+        <xs:attribute ref="marginLeft"/>
+        <xs:attribute ref="marginRight"/>
+        <xs:attribute ref="marginTop"/>
+        <xs:attribute ref="paddingBottom"/>
+        <xs:attribute ref="paddingLeft"/>
+        <xs:attribute ref="paddingRight"/>
+        <xs:attribute ref="paddingTop"/>
+        <xs:attribute ref="selfAlignment"/>
+        <xs:attribute ref="width"/>
+        <xs:attribute ref="wpercentage"/>
+    </xs:attributeGroup>
+</xs:schema>
